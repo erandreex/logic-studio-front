@@ -1,0 +1,36 @@
+<div class="container mt-4">
+    <a routerLink="/" routerLinkActive="router-link-active"> < Regresar</a>
+
+    <h2>Crear reserva</h2>
+
+    <form [formGroup]="formReservas">
+        <div class="mb-3">
+            <label for="input1" class="form-label">Placa</label>
+            <input
+                formControlName="placa"
+                type="text"
+                class="form-control"
+                id="input1"
+                placeholder="Ingresa el primer dato"
+            />
+        </div>
+        <div class="mb-3">
+            <label for="estado" class="form-label">Estado de la Reserva:</label>
+            <select formControlName="estado" class="form-select" id="estado" name="estado">
+                <option value="ATENDIDO">Atendido</option>
+                <option value="PROGRAMADO">Programado</option>
+                <option value="CANCELADO">Cancelado</option>
+                <option value="EN ESPERA">En espera</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="cita" class="form-label">Fecha: </label>
+            <select formControlName="cita" class="form-select" id="cita" name="cita">
+                <option *ngFor="let fecha of calendario" [value]="fecha">{{ fecha | date : "medium" }}</option>
+            </select>
+        </div>
+        <button (click)="crearReserva()" type="submit" class="btn btn-primary">Crear</button>
+    </form>
+
+    <h3>{{ mensaje }}</h3>
+</div>

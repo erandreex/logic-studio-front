@@ -1,0 +1,28 @@
+<div class="container mt-4">
+    <a routerLink="/" routerLinkActive="router-link-active"> < Regresar</a>
+
+    <div class="mb-3">
+        <h2>Reservas - {{ placa }}</h2>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Placa</th>
+                    <th scope="col">Estado</th>
+                    <th scope="col">Cita</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let reserva of lista; let i = index">
+                    <th scope="row">{{ i + 1 }}</th>
+                    <td>{{ reserva.placa }}</td>
+                    <td>{{ reserva.estado }}</td>
+                    <td>{{ reserva.cita }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
