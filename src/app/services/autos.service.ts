@@ -14,7 +14,7 @@ import {
     providedIn: 'root',
 })
 export class AutosService {
-    private baseUrl: string = 'http://172.30.3.228:8081/autos';
+    private baseUrl: string = 'http://ec2-3-90-185-129.compute-1.amazonaws.com:8081/autos';
 
     constructor(private http: HttpClient) {}
 
